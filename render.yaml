@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: finmind-mcp
+    runtime: docker
+    repo: https://github.com/mikeleeattaiwan/finmind-mcp
+    branch: main
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeployTrigger: commit
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: FINMIND_TOKEN
+        sync: false
