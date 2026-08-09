@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finmind-mcp"
+version = "0.1.0"
+description = "FinMind MCP server for Taiwan market data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=2.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.5.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["finmind_mcp*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
